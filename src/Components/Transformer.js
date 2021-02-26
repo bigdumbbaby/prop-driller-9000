@@ -1,13 +1,24 @@
 import React from 'react';
 
-function Transformer() {
+function Transformer(props) {
+
+  const addTransformer = (transformer) => {
+    return(
+      <img
+          className = 'transformer'
+          src = {transformer.url}
+          alt = {transformer.name}
+          key = {transformer.id}
+        />
+    )
+  }
 
   return (
-    <img
-      className = 'transformer'
-      src = {}
-      alt = {}
-    />
+    <div>
+    {props.proptimusii.map(transformer => 
+      addTransformer(transformer)
+    )}
+    </div>
   );
 }
 
